@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Calendar container */
+.calendar-wrap {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  border: none;
+  background: none;
+  font-size: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.month-year {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* Add Event Row */
+.add-event-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+button.primary {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Calendar Grid */
+.grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: 600;
+  padding: 8px 4px;
+}
+
+.day-cell {
+  min-height: 100px;
+  border-radius: 8px;
+  padding: 8px;
+  border: 1px solid #ececec;
+  background: #fafafa;
+  position: relative;
+  overflow: auto;
+}
+
+.day-number {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #333;
+}
+
+.today {
+  border: 2px solid #f97316;
+  background: linear-gradient(
+    90deg,
+    rgba(249, 115, 22, 0.06),
+    rgba(249, 115, 22, 0.02)
+  );
+}
+
+/* Events */
+.event-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  font-size: 13px;
+}
+
+.event-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 150px;
+}
+
+.event-delete {
+  border: none;
+  background: transparent;
+  color: #c53030;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0 6px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  width: 360px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.modal h3 {
+  margin: 0 0 8px 0;
+}
+
+.close-x {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.form-row {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-row input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.validation-error {
+  color: #b91c1c;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn-ghost {
+  background: #f3f4f6;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Small screen adjustments */
+@media (max-width: 520px) {
+  .modal {
+    width: 92%;
+  }
+}
